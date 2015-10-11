@@ -51,8 +51,8 @@ public class Peamurdja3_laevad {
                 Scanner pakutudPositsioon = new Scanner(System.in);
                 System.out.println("Paku positsioon:");
                 int positsioonx = pakutudPositsioon.nextInt();
-                System.out.println(positsioonx);
-                System.out.println(laud[positsioonx]);
+                System.out.println("pakuti " + positsioonx);
+                System.out.println("leiti kaardilt" + laud[positsioonx]);
 
                 /**
                 if ((laud[idx]) != 1) {
