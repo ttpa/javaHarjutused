@@ -23,9 +23,9 @@ public class Peamurdja2_ristmik extends Application {
 
         tsykkel(foor1, 0);
         tsykkel(foor2, 0);
-        ootame(foor3, 1); // probleem ??
+        ootame(foor3, 1); // probleem ???
         tsykkel2(foor3, 1);
-        ootame(foor4, 1); // probleem ??
+        ootame(foor4, 1); // probleem ???
         tsykkel2(foor4, 1);
 
     }
