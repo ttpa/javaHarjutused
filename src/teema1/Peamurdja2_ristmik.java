@@ -24,7 +24,7 @@ public class Peamurdja2_ristmik extends Application {
         horisontaalne(foor4);
 
         //Public int tsykkellopp = 0;
-        while (tsykkellopp < 1) {
+//        while (tsykkellopp < 1) {
 
 
             tsykkel(foor1, 0);
