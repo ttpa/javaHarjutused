@@ -20,8 +20,7 @@ public class Peamurdja2_ristmik extends Application {
         vertikaalne(foor2);
         horisontaalne(foor3);
         horisontaalne(foor4);
-//        vahetaPunaseks(foor1);
-//        vahetaPunaseks(foor2);
+
         tsykkel(foor1, 0);
         tsykkel(foor2, 0);
         ootame(foor3, 1); // probleem ??
