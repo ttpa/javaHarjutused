@@ -16,4 +16,8 @@ import java.util.Scanner;
  *    nii vertikaalselt kui ka horisontaalselt?
  */
 public class Peamurdja3_laevad {
+    public static void main(String[] args) {
+        System.out.println("kontrollin");
+
+    }
 }
