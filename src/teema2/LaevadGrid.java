@@ -1,5 +1,7 @@
 package teema2;
 
+import java.util.Arrays;
+
 /**
  * Created by tpaemurr on 30.10.15.
  */
@@ -20,7 +22,7 @@ public class LaevadGrid {
 
     }
     public static void  paigutaLaevad() {
-        for int (i = 0; i < lauaKorgus; i++){
+        for (int i = 0; i < lauaKorgus; i++){
             for (int j = 0; j < lauaLaius; j ++){
                 laud[i][j] = (int) Math.round(Math.random());
             }
