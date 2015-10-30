@@ -23,6 +23,14 @@ public class LaevadGrid {
 
     }
 
+    private static void kontrolliTabamust(int[] xy) {
+        if (laud[xy[0]][xy[1]] == 0) {
+        } else if (tabamus == 1) {
+            laud[xy[0]][xy[1]] = 2;
+        }
+
+    }
+
     private  static  void  kysiKasutajalt() {
         System.out.println("Sisesta x ja y kordinaadid (tühik vahel)");
         String sisestus = sc.nextLine(); //5 6
