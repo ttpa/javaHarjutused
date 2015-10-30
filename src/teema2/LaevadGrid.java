@@ -24,6 +24,12 @@ public class LaevadGrid {
     }
 
     private  static  void  kysiKasutajalt() {
+        System.out.println("Sisesta x ja y kordinaadid (tühik vahel)");
+        String sisestus = sc.nextLine(); //5 6
+        char a ='2';
+        int x = Integer.parseInt( sisestus.substring(0, 1));
+        int y = Integer.parseInt( sisestus.substring(2, 3));
+        // int y = (int) sisestus.charAt(2);
 
     }
 
