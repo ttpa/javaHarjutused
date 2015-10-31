@@ -36,7 +36,19 @@ public class Harjutus3_logisisse extends Application{
         vbox.getChildren().addAll(kasutajaLabel, kasutajaInput);
         vbox.getChildren().addAll(paroolLabel, paroolInput, loginNupp);
 
-        loginNupp.setOnAction();
+        loginNupp.setOnAction(event -> {
+            String kasutaja = kasutajaInput.getText();
+            String parool = paroolInput.getText();
+            if (kasutaja.equals("Mina") && parool.equals("qwerty")) {
+
+            } else {
+                System.out.println("VALE !!!");
+
+            }
+            System.out.println("Parool Õige !!!");
+
+        });
+
 
     }
 }
