@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class Peamurdja1_laevad_fx extends Application {
     GridPane laud;
     StackPane maailm;
-    Stage stage;
+    Stage lava;
     int laualTulpasid = 4;
     int laualRidasid = 4;
     int ruuduKylg = 50;
@@ -29,66 +29,49 @@ public class Peamurdja1_laevad_fx extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        laeva = primaryStage;
-        seadistaLava();
-        genereeriGrid();
         reageeriKlikile();
+
         // kas on laevu();
         // gameover();
+        lava = primaryStage;
 
-        stage = primaryStage;
 
-        seadistaStseen();
-        genereeriLaevad();
-        reageeriKlikile();
+//        genereeriGrid();
+        seadistaLava();
+//        genereeriLaevad();
+//        gameOver();
+        //reageeriKlikile();
 
         primaryStage.show(); // Näita "lava"
     }
 
+
+
     private void reageeriKlikile() {
         laud.setOnMouseClicked(event -> {
-            Rectangle ruut = (Rectangle) event.getTarget();
-                                    
+                    Rectangle ruut = (Rectangle) event.getTarget();
+                    String ruuduID = ruut.getId();
+                    if (ruuduID.equals("laev")) {
+                        System.out.println("Möödas");
+                    } else if (ruuduID("laev")) {
 
-                }
-            )
-    }
-
-    /*
-    private void reageeriKlikile() {
-        laud.setOnMouseClicked(event -> {
-            Rectangle shape = (Rectangle) event.getTarget();
-            Integer rida = GridPane.getRowIndex(shape);
-            Integer tulp = GridPane.getColumnIndex(shape);
-            String id = shape.getId();
-
-            if (id == "laev") {
-                shape.setId("põhjas");
-                shape.setFill(laevaMuster);
-
-            } else if (id == "tühi") {
-                shape.setId("meri");
-                shape.setFill(Color.DARKBLUE);
-            }
-            if (laevadOnOtsas()) {
-                gameover();
-            }
-            // Kui soovid sekundit oodata enne kirja
-            /* if (laevadOnOtsas()) {
-                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        gameover();
                     }
-                }));
-                timeline.play();
-            }*/
-        });
+                    if (!laevasidAlles()) {
+                        System.out.println("Gameover");
+                    }
+                }
+            );
+        }
     }
 
-    */
 
-    private void seadistaStseen() {
+
+
+
+
+
+
+    private void seadistaLava() {
         int piksleidLai = laualTulpasid * ruuduKylg;
         int piksleidKorge = laualRidasid * ruuduKylg;
 
@@ -101,18 +84,18 @@ public class Peamurdja1_laevad_fx extends Application {
         maailm.getChildren().add(laud);
 
         Scene scene = new Scene(maailm, piksleidKorge, piksleidLai);
-        stage.setScene(scene);
-        stage.setOnCloseRequest(event -> System.exit(0));
+        lava.setScene(scene);
+        lava.setOnCloseRequest(event -> System.exit(0));
     }
 
 
 
-    private void gameover() {
+    private void gameOver() {
         Label tekst = new Label("Võitsid!");
         StackPane stack = new StackPane();
         stack.getChildren().add(tekst);
         Scene stseen = new Scene(stack, 200,200);
-        stage.setScene(stseen);
+        lava.setScene(stseen);
     }
 
     private void genereeriLaevad() {
@@ -134,7 +117,7 @@ public class Peamurdja1_laevad_fx extends Application {
         System.out.println("Laevasid on " + laevasid);
     }
 
-    private boolean laevadOnOtsas() {
+    private boolean laevasidAlles() {
         for (Node node : laud.getChildren()) {
             if (node.getId() == "laev") {
                 return false;
