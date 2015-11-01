@@ -29,13 +29,6 @@ public class Peamurdja1_laevad_fx extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        laeva = primaryStage;
-        seadistaLava();
-        genereeriGrid();
-        reageeriKlikile();
-        // kas on laevu();
-        // gameover();
-
         stage = primaryStage;
 
         seadistaStseen();
@@ -45,16 +38,23 @@ public class Peamurdja1_laevad_fx extends Application {
         primaryStage.show(); // Näita "lava"
     }
 
-    private void reageeriKlikile() {
-        laud.setOnMouseClicked(event -> {
-            Rectangle ruut = (Rectangle) event.getTarget();
-                                    
+    private void seadistaStseen() {
+        int piksleidLai = laualTulpasid * ruuduKylg;
+        int piksleidKorge = laualRidasid * ruuduKylg;
 
-                }
-            )
+        maailm = new StackPane();
+        Rectangle taust = new Rectangle(piksleidLai, piksleidKorge);
+        taust.setFill(Color.BLUE);
+        maailm.getChildren().add(taust);
+
+        laud = new GridPane();
+        maailm.getChildren().add(laud);
+
+        Scene scene = new Scene(maailm, piksleidKorge, piksleidLai);
+        stage.setScene(scene);
+        stage.setOnCloseRequest(event -> System.exit(0));
     }
 
-    /*
     private void reageeriKlikile() {
         laud.setOnMouseClicked(event -> {
             Rectangle shape = (Rectangle) event.getTarget();
@@ -85,27 +85,6 @@ public class Peamurdja1_laevad_fx extends Application {
             }*/
         });
     }
-
-    */
-
-    private void seadistaStseen() {
-        int piksleidLai = laualTulpasid * ruuduKylg;
-        int piksleidKorge = laualRidasid * ruuduKylg;
-
-        maailm = new StackPane();
-        Rectangle taust = new Rectangle(piksleidLai, piksleidKorge);
-        taust.setFill(Color.BLUE);
-        maailm.getChildren().add(taust);
-
-        laud = new GridPane();
-        maailm.getChildren().add(laud);
-
-        Scene scene = new Scene(maailm, piksleidKorge, piksleidLai);
-        stage.setScene(scene);
-        stage.setOnCloseRequest(event -> System.exit(0));
-    }
-
-
 
     private void gameover() {
         Label tekst = new Label("Võitsid!");
